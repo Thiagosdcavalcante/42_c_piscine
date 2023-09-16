@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+void    ft_swap(int *a, int *b)
 {
-	*a = *a ^ *b, *b = *a ^ *b, *a = *a ^ *b;
-}
+    *a = *a ^ *b;
+    *b = *a ^ *b;
+    *a = *a ^ *b;
+  }
 
 void ft_rev_int_tab(int *tab, int size)
 {
-	int	count;
-	int	end_tab;
+    int    count;
+    int    end_tab;
 
-	end_tab = size - 1;
-	count = 0;
-	while (count < size)
-	{
-		ft_swap(&tab[count], &tab[end_tab]);
-		count++;
-		end_tab--;
-	}
+    end_tab = size - 1;
+    count = 0;
+    while (count < end_tab)
+    {
+        ft_swap(&tab[count], &tab[end_tab]);
+        count++;
+        end_tab--;
+    }
 }
